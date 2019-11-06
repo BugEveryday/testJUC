@@ -29,6 +29,10 @@ public class CommuLockCondition {
 	}
 }
 class Demo1{
+	/*
+	 * lock的开关需要ReentrantLock类，而且一定是要关闭的，所以要用try...finally
+	 * await和signalAll需要Condition，Condition需要lock
+	 */
 	private Lock lock=new ReentrantLock();
 	private Condition c=lock.newCondition();
 	private int num=0;
